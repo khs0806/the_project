@@ -1,0 +1,149 @@
+{% extends 'htmltest/base.html' %}
+{% block header %}
+<style>
+    div {
+        zoom: 0;
+    }
+    body  {
+        background-color: #f0f3f4;
+    }
+    input[type=text],
+    select {
+        width: 200;
+        padding: 12px 20px;
+        margin: 7px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        vertical-align: top;
+    }
+
+    option,
+    input {
+        color: #000000;
+        font-size: 20pt;
+        text-decoration: none;
+        font-family: 'Black Han Sans', sans-serif;
+    }
+
+    input[type=button] {
+        width: 50%;
+        background-color: orange;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+    }
+
+    input[id="chk_police"] {
+        position: relative;
+        top: 1.5px;
+
+    }
+
+    #warp {
+        top: 15px;
+        right: 10px;
+    }
+
+    .conte {
+        height: 50px;
+        max-width: 50px;
+        position: relative;
+    }
+    .left-box {
+        top: 50; left: 0;
+        width: 600px;
+        height: 400px;
+        float: left;
+      }
+    .right-box {
+        width: 600px;
+        height: 400px;
+        top: 50; right: 0;
+        float: right;
+      }
+    p {
+        float: left;
+
+    }
+    .right-box img {
+        width: 600px;
+        height: 400px;
+    }
+</style>
+<script>
+    function test() {
+        var eform = document.forms[0];
+        var chk = '';
+        if (eform.chk_police.checked) {
+            chk = '1';
+        }
+        else {
+            chk = '0';
+        }
+        window.location.href = '/test/' + eform.s_year.value + ',' + eform.s_columns.value + ',' + chk;
+    }
+    document.write(window.location.href);
+</script>
+{% endblock %}
+
+{% block content %}
+
+<hr>
+<form method="POST">
+    <select name='s_year' id='s_year'>
+        {% for i in sc_ylist %}
+        <option value='{{i}}'>{{i}}</option>
+        {% endfor %}
+    </select>
+    &nbsp;&nbsp;&nbsp;
+    <select name='s_columns' id='s_columns'>
+        {% for i in sc_clist %}
+        <option value='{{i}}'>{{i}}</option>
+        {% endfor %}
+    </select>
+    &nbsp;&nbsp;&nbsp;
+    <input type="checkbox" id="chk_police" name="chk_police" value='1'>경찰서위치
+    &nbsp;&nbsp;&nbsp;
+    <input type='button' value='분석하기' onclick="location.href ='javascript:test();'" style="background-color: #291717;">
+</form>
+<hr>
+
+<p style='font-size : 34px; text-align : center; float: left; margin-left: 130px; color:black;' >
+    {{l_year}}년도&nbsp;&nbsp;&nbsp;{{l_rate}}
+</p>
+<p style='font-size : 34px; text-align : center; float: right; margin-right: 160px; color:black;'>
+    자치구별 토지용도
+</p>
+<br>
+<br>
+
+<hr>
+{% load static %}
+
+<div class="left-box">
+    {% include "./s_map.html" %}
+</div>
+<div class="right-box">
+{% if l_year == 2015 %}
+    <img src="{% static '2015regions.png' %}" alt="Logo">
+    <img src="{% static '2015bo.png' %}" alt="Logo">
+{% elif l_year == 2016 %}
+    <img src="{% static '2016regions.png' %}" alt="Logo">
+    <img src="{% static '2016bo.png' %}" alt="Logo">
+{% elif l_year == 2017 %}
+    <img src="{% static '2017regions.png' %}" alt="Logo">
+    <img src="{% static '2017bo.png' %}" alt="Logo">
+{% else %}
+    <img src="{% static '2018regions.png' %}" alt="Logo">
+    <img src="{% static '2018bo.png' %}" alt="Logo">
+{% endif %}
+</div>
+<!--$("#manageTp option:selected").text()
+$("select[name=셀렉트박스name]").val()-->
+{% endblock %}

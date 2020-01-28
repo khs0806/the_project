@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>index.html</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean" rel="stylesheet">
+    <style>
+        /*simple reset css*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+            font-family: "Black Han Sans", Helvetica, Arial, sans-serif;
+            color: #000000;
+            background-color: #f0f3f4;
+    
+        }
+    
+        li {
+            list-style: none;
+        }
+    
+        a {
+            text-decoration: none;
+        }
+    
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 2000;
+            background-color: rgb(31, 29, 29);
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05) 0 1px 0 rgba(0, 0, 0, 0.05);
+        }
+    
+        nav {
+            float: right;
+        }
+    
+        .logo {
+            display: inline-block;
+            height: 36px;
+            margin: 12px 0 12px 25px;
+        }
+    
+        .logo>img {
+            height: 36px;
+        }
+    
+        .nav-items>li {
+            display: inline-block;
+        }
+    
+        .nav-items>li>a {
+            line-height: 60px;
+            padding: 0 30px;
+            color: rgba(231, 230, 230, 0.753);
+        }
+    
+        .nav-items>li>a:hover {
+            color: gold;
+        }
+    
+        #content-wrap:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    
+        aside {
+            position: fixed;
+            width: 200px;
+            top: 60px;
+            bottom: 0;
+            padding-top: 25px;
+            background-color: rgb(231, 79, 79);
+        }
+    
+        aside>ul>li>a {
+            display: block;
+            color: floralwhite;
+            padding: 10px 0 10px 20px;
+        }
+    
+        aside>ul>li>a.active {
+            background-color: gold;
+        }
+    
+        aside>h1 {
+            padding: 20px 0 20px 20px;
+            color: #fff;
+        }
+    
+        section {
+            font-size: 2.5em;
+            text-align: center;
+        }
+    
+        article {
+            margin: 10px;
+            padding: 25px;
+        }
+    
+        .hamburger {
+            width: "80%";
+            height: "80%";
+            display: block;
+    
+        }
+    
+        .allday {
+            width: 80%;
+            height: 80%;
+        }
+    
+        #wrap {
+            width: 100;
+            margin-top: 60px;
+        }
+    
+        .logo>h1 {
+            color: tomato;
+        }
+    
+        footer {
+            position: absolute;
+            height: 60px;
+            width: 100%;
+            padding: 0 25px;
+            line-height: 60px;
+            color: #fff;
+            border-top: 1px solid #dee5e7;
+        }
+    
+        .fas {
+            color: gold;
+        }
+    </style>
+   </head>
+   
+   <body>
+   <div id="wrap">
+   <header>
+      
+      <a href="/" class="logo">
+         <h1 class="fas fa-hamburger">빅파이</h1>
+      </a>
+   
+      <nav>
+      <ul class="nav-items" style="font-size: 1.5em;"> 
+         <li> <a href="">김현수</a></li>
+         <li> <a href="">김진솔</a></li>
+         <li> <a href="">김보경</a></li>
+         <li> <a href="">강현식</a></li>
+         <li> <a href="">박성호</a></li>
+      </ul>
+   </nav>
+   </header>
+   <div id="content-wrap" class="clearfix">
+      
+      <section>
+            <image id="hamburger">
+                <img src="./image/1.jpg" alt="" >
+            </image>
+        <article id="story">
+                <h1>프로젝트목표</h1>
+                <p style="font-size: 0.7em;">
+                    신문, 뉴스, 인터넷 등 다양한 곳에서 범죄발생 소식을 쉽게 접할 수 있다. <br>이러한 미디어를 통해 다양하고 수많은 범죄 소식이 매일 쏟아지고 있는데 <br>
+                    정보전달력이 좋아진건지, 실제 범죄율이 늘어난건지<br> 체감상 전보다 훨씬 범죄가 다양해지고 자주 발생하는 것 같다. <br>이런 사회에서 실제로 범죄와 관련된 자료들을 모아
+                   분석해보고, <br>범죄 발생율은 낮추고, 검거율은 높이는 방법이 있는지 모색해본다. <br>
+                    제일 사람이 밀집해 있는 서울시의 구별로 분석을 실시하여, <br>범죄율과 관련이 높은 변수들을 알아내고,<br>
+                    실제 거주지를 선택할 때 좀 더 안전한 곳을 선택할 수 있도록 한다.</p>
+         </article>
+         <article id="story">
+                <h1>개요</h1>
+                
+                <p>2015-2018 서울시 구별 범죄관련 분석 및 시각화</p>
+                <p>- 구별 범죄발생/검거율과 다양한 변수 간 상관분석</p>
+                <p>- 서울시 내 경찰서(치안센터까지) 위치 지도에 표시</p>
+                <p>- 연도별/구별 토지용도, 범죄발생율, cctv위치 시각화</p>
+         </article>
+         <article id="people">
+            <h1>분석과정</h1>
+            <a href="indextwo/"><img src="/static/main.jpg" alt="" style="width: 100%; height:300px"></a>
+         </article>
+         <article>
+            <a href="post/"><img src="/static/main2.png" alt="" style="width: 100%; height:300px"></a>  
+         </article>
+         <article id="allday">
+                <h1>결과</h1>
+                <img src="./image/2.jpg" alt="" id=allday width="512px" height="384px">
+            <p>맥올데이는 한시적인 할인 행사가 아닌, 365일 언제든지 즐길 수 있는 맥도날드의 새로운 서비스 입니다.<br>판매시간 : AM 10:30 ~ AM 4:00 매장 방문 고객에 한함</p>
+        </article>
+        
+      </section>
+   </div>
+   <footer>Copyright 2019 bobo</footer>
+</div>
+   </body>
+</html>

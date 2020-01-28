@@ -1,0 +1,95 @@
+{% load static %}
+<html>
+
+<head>
+    <title>빅파이팀의 범죄분석</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean" rel="stylesheet">
+
+    <style>
+        .page-headers {
+            background-color: #000000;
+            color: #fff;
+            margin-top: 0;
+            padding: 20px 20px 20px 40px;
+            position: fixed;
+            border-bottom: 1px solid #e95b19;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            z-index: 10000;
+        }
+        
+        .page-headers h1, .page-headers h2, .page-headers h1 a, .page-headers h1 a:visited, .page-headers h1 a:active, .post h1, p {
+            color: yellow;
+            font-size: 30pt;
+            text-decoration: none;
+            font-family: 'Black Han Sans', sans-serif;
+            text-align: center;
+        }
+
+        .post a:visited {
+            color: #000000;
+
+        }
+
+        .post a:hover {
+            color: #fa0000;
+
+        }
+
+        .post {
+            padding-top: 30px;
+        }
+
+        .post h2 {
+            color: #000000;
+            font-size: 30pt;
+            text-decoration: none;
+            font-family: 'Black Han Sans', sans-serif;
+            text-align: left;
+        }
+
+        .page-headers h1 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .row {
+            padding-bottom: 50px;
+            padding-top: 84px;
+            width: 1300px;
+
+        }
+        
+        .row hr {
+            background-color: rgb(240, 12, 12);
+            height: 2px;
+        }
+        
+    </style>
+    {% block header %}
+    {% endblock %}
+</head>
+
+<body>
+    <div class="page-headers">
+        {% if user.is_authenticated %}
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        {% endif %}
+        <h1><a href="/">서울시 년도별 구별 시각화</a></h1>
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8" style="width: 1300px; position : absolute;">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
