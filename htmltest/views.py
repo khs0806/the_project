@@ -157,3 +157,6 @@ def lat(request):
 
 def marker(request):
     return render(request, 'htmltest/marker.html')
+
+def center(request):
+    return render(request, 'htmltest/center.html')

@@ -14,6 +14,8 @@ urlpatterns = [
     path('satis/', views.satis, name='satis'),
     path('lat/', views.lat, name='lat'),
     path('marker/', views.marker, name='marker'),
+    path('center/', views.center, name='center'),
+
 
 
 
